@@ -1,0 +1,8 @@
+ex1/bin/
+ex1/obj/
+
+
+*.layout
+*.depend
+*.cbp
+

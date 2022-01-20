@@ -12,10 +12,12 @@
 struct ring_buffer
 {
     /** TODO: Fill ring buffer structure. */
-    uint8_t const *buffer;
-    size_t buffer_size;
+    uint8_t *buffer;
+    size_t buffer_max_size;
+    size_t buffer_current_size;
     size_t head;
     size_t tail;
+    bool initialized;
 };
 
 //------------------------------------------------------------------------------
