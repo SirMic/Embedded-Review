@@ -10,14 +10,13 @@
 struct ring_buffer ring;
 uint8_t data[BUFFER_MAX_SIZE];
 uint8_t test_put_data = 5, test_get_data;
+
 int main(int arc, char *argv[])
 {
-
-
     /* Trying initialize buffer with wrong data_size
         1) function ring_buffer_init should return false
     */
-    assert(ring_buffer_init(&ring, &data, 0) == false);
+    assert(ring_buffer_init(&ring, data, 0) == false);
 
     /** Tests with buffer uninitialized */
     /* When ring buffer is uninitialized
@@ -39,7 +38,7 @@ int main(int arc, char *argv[])
         2) initialized flag should be true
         3) function ring_buffer_is_empty should return true
     */
-    assert(ring_buffer_init(&ring, &data, BUFFER_MAX_SIZE) == true);
+    assert(ring_buffer_init(&ring, data, BUFFER_MAX_SIZE) == true);
     assert(ring.initialized == true);
     assert(ring_buffer_is_empty(&ring) == true);
     /* Function ring_buffer_get_max_size should return BUFFER_MAX_SIZE */

@@ -11,7 +11,6 @@
 
 struct ring_buffer
 {
-    /** TODO: Fill ring buffer structure. */
     uint8_t *buffer;
     size_t buffer_max_size;
     size_t buffer_current_size;
@@ -27,21 +26,21 @@ struct ring_buffer
  * @param   [inout] me - ring buffer structure to be initialized
  * @param   [in] data - memory where ring buffer data will be stored
  * @param   [in] data_size - size of `data` argument
- * @return  true if initialized sucessfully, otherwise false
+ * @return  true if initialized successfully, otherwise false
  */
 bool ring_buffer_init(struct ring_buffer *me, uint8_t *data, size_t data_size);
 
 /**
  * @brief   Clears ring buffer data.
  * @param   [inout] me - ring buffer structure
- * @return  true if cleared sucessfully, otherwise false
+ * @return  true if cleared successfully, otherwise false
  */
 bool ring_buffer_clear(struct ring_buffer *me);
 
 /**
  * @brief   Checks if ring buffer is empty.
  * @param   [in] me - ring buffer structure
- * @return  true if empty sucessfully, otherwise false
+ * @return  true if empty successfully, otherwise false
  */
 bool ring_buffer_is_empty(const struct ring_buffer *me);
 
@@ -71,7 +70,7 @@ bool ring_buffer_put(struct ring_buffer *me, uint8_t data);
  * @brief   Pulls data from the ring buffer, decrements current size by 1.
  * @param   [inout] me - ring buffer structure
  * @param   [out] data - container for output data
- * @return  true if data was successfully added into ring buffer, otherwise false
+ * @return  true if data was successfully added into output container, otherwise false
  */
 bool ring_buffer_get(struct ring_buffer *me, uint8_t *data);
 
